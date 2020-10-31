@@ -2,9 +2,7 @@
 layout: post
 title: "Variational Autoencoder Framework Derivation"
 author: "Parth Shah"
-categories: journal
 tags: [VAE, Variational, Inference, DL, AI]
-image: cards.jpg
 ---
 
 
