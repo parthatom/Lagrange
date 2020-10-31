@@ -1,7 +1,7 @@
-title: Blog
+title: Lagrange
 name: "Parth's Math Blog"
 author: Parth Shah
-baseurl: "/blog"
+baseurl: "/lagrange"
 description: Document my learning notes.
 profile_url: "http://parthatom.github.io"
 
