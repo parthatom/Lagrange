@@ -2,7 +2,7 @@
 layout: post
 title: "Variational Autoencoder Framework Derivation"
 author: "Parth Shah"
-tags: [VAE, Variational, Inference, DL, AI]
+tags: VAE Variational Inference DL AI generative-model
 ---
 
 
