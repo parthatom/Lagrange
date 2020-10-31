@@ -23,13 +23,13 @@ $$ p(z|x) = \frac{p(x|z)p(z)}{p(x)} $$
 
 Using conditioning, we can rewrite this as
 
-$$ p(z|x) = \frac{p(x|z)p(z)}{\int p(x|u)p(u) du} $$
+$$ p(z\|x) = \frac{p(x\|z)p(z)}{\int p(x\|u)p(u) du} $$
 
 Assume:
 
 $$ p(Z) \sim N(0, I) $$
 
-And, we can paramaterize $p(X|Z)$ for $f \in F$
+And, we can paramaterize $p(X\|Z)$ for $f \in F$
 
 $$ p(X|Z) \sim N(f(Z), cI) $$
 
