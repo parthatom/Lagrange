@@ -1,0 +1,21 @@
+title: Blog
+name: "Parth's Math Blog"
+author: Parth Shah
+baseurl: "/blog"
+description: Document my learning notes.
+profile_url: "http://parthatom.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+excerpt_separator: <!--more-->
+plugins:
+  - jekyll-feed
+  - jekyll-archives
+exclude:
+  - Gemfile
+  - Gemfile.lock
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
