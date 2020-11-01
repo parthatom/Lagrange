@@ -38,26 +38,26 @@ where $$F$$ is a family of functions and $$c>0$$. For now assume $$f$$ is known.
 
 Even though we know $$p(x\vert z)$$ and $$p(z)$$, we can't estimate $$p(z\vert x)$$ from Conditioning Eqn. because of the intractability of the denominator. Therefore, we resort to variational inference.
 
-Approximate $p(z \vert x)$ with $q_x(z)$ s.t.,
+Approximate $$p(z \vert x)$$ with $$q_x(z)$$ s.t.,
 
 $$
     q_x(z) \sim N(g(x), h(x))
 $$
 
-where $g \in G$ and $h \in H$, $G$ and $H$ are families of functions.
-We want to fine $(g,h) \in G \times H$ s.t, the approximation captures most information of $p(z \vert x)$. We use KL Divergence to measure the <b> distance </b> between $q_x(z)$ and $p(z \vert x)$.
+where $$g \in G$$ and $$h \in H$$, $$G$$ and $$H$$ are families of functions.
+We want to fine $$(g,h) \in G \times H$$ s.t, the approximation captures most information of $$p(z \vert x)$$. We use KL Divergence to measure the <b> distance </b> between $$q_x(z)$$ and $$p(z \vert x)$$.
 
 i.e.,
 
 $$
 \begin{aligned}
-    (g^{*}, h^{*}) &=\underset{(g,h) \in G \times H}{\mathrm{argmin}} D_\text{KL}( q_x(z) \ \vert\vert\ p(z\vertx) ) \\
-    &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[log\ p( z\vertx)]  & (\because D_\text{KL}(p(x) \ \vert\vert\ q(x) = E[log\ p( x)] - E[log(q(x))]) \\
-    &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[\frac{ log\ p(x\vertz) p(z) }{p(x)}] & (\because p(z\vertx) = \frac{p(x\vertz)p(z)}{p(x)})\\
-    &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[\frac{log\ p(z,x)}{log\ p(x)}] & (From\  \eqref{eq:model}) \\
+    (g^{*}, h^{*}) &=\underset{(g,h) \in G \times H}{\mathrm{argmin}} D_\text{KL}( q_x(z) \ \vert\vert\ p(z\vert x) ) \\
+    &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[log\ p( z\vert x)]  & (\because D_\text{KL}(p(x) \ \vert\vert\ q(x) = E[log\ p( x)] - E[log(q(x))]) \\
+    &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[\frac{ log\ p(x \vert z) p(z) }{p(x)}] & (\because p(z \vert x) = \frac{p(x \vert z)p(z)}{p(x)})\\
+    &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[\frac{log\ p(z,x)}{log\ p(x)}] & (From\  Generative model definition) \\
     &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[log\ p( z,x)] - E[log\ p( x )] & (\because E[A+B] = E[A] +E[B]) \\
     &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[log\ p( z,x)] - log\ p(x) & (\because E(c) = c)
 \end{aligned}
 $$
 
-This is still intractable because of the presence of $p(x)$.
+This is still intractable because of the presence of $$p(x)$$.
