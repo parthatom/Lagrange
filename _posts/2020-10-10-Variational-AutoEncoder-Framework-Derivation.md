@@ -54,7 +54,7 @@ $$
     (g^{*}, h^{*}) &=\underset{(g,h) \in G \times H}{\mathrm{argmin}} D_\text{KL}( q_x(z) \ \vert\vert\ p(z\vert x) ) \\
     &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[log\ p( z\vert x)]  & (\because D_\text{KL}(p(x) \ \vert\vert\ q(x) = E[log\ p( x)] - E[log(q(x))]) \\
     &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[\frac{ log\ p(x \vert z) p(z) }{p(x)}] & (\because p(z \vert x) = \frac{p(x \vert z)p(z)}{p(x)})\\
-    &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[\frac{log\ p(z,x)}{log\ p(x)}] & (From\  Generative model definition) \\
+    &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[\frac{log\ p(z,x)}{log\ p(x)}] & (From\ generative\ model\ definition) \\
     &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[log\ p( z,x)] - E[log\ p( x )] & (\because E[A+B] = E[A] +E[B]) \\
     &= \underset{(g,h) \in G \times H}{\mathrm{argmin}} E[log\ q_x( z)] - E[log\ p( z,x)] - log\ p(x) & (\because E(c) = c)
 \end{aligned}
